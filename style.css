@@ -1,164 +1,191 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap');
-
 * {
   box-sizing: border-box;
 }
 
 body, html {
-  margin: 0; padding: 0; height: 100%;
+  margin: 0; padding: 0;
+  height: 100%;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #004e92, #000428);
-  color: #e0eaff;
+  background-color: #0d47a1;
+  color: #e3f2fd;
   overflow: hidden;
 }
 
-.story-container {
-  width: 360px;
-  height: 640px;
-  background: linear-gradient(120deg, #003c70, #0059a3);
-  margin: 20px auto;
-  border-radius: 30px;
-  box-shadow: 0 20px 40px rgb(0 0 0 / 0.4);
-  position: relative;
-  overflow: hidden;
+.container {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.page {
+.slide {
+  position: absolute;
   width: 100%;
   height: 100%;
-  flex-shrink: 0;
-  position: absolute;
-  top: 0; left: 0;
-  background: transparent;
-  display: flex;
+  padding: 40px 30px;
+  display: none;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 30px 20px;
-  color: #e6f0ff;
+  justify-content: center;
   text-align: center;
-  opacity: 0;
-  transition: opacity 0.8s ease;
+  background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.8s ease forwards;
 }
 
-.page.active {
-  opacity: 1;
-  position: relative;
+.slide.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 
 .logo-large {
-  width: 200px;
+  width: 220px;
   height: auto;
-  margin: 0 auto 40px auto;
-  filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+  margin: 0 auto;
 }
 
 .logo-small {
   width: 100px;
   height: auto;
   margin-bottom: 20px;
-  filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
 }
 
-h1 {
-  font-weight: 800;
-  font-size: 26px;
-  line-height: 1.2;
-  margin-bottom: 25px;
-  text-shadow: 0 0 12px rgba(255,255,255,0.2);
-}
-
-h2 {
-  font-weight: 600;
-  font-size: 22px;
-  margin: 0 0 20px 0;
-  text-shadow: 0 0 8px rgba(0,0,0,0.3);
-}
-
-.class-photo {
-  width: 280px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-  margin-bottom: 15px;
-  border: 3px solid #46a0ff;
-}
-
-.continue-text {
-  font-size: 16px;
-  font-weight: 600;
-  color: #a1d1ff;
-  cursor: pointer;
-  text-shadow: 0 0 6px #88bbff;
-  user-select: none;
-  animation: blink 1.6s infinite;
-  margin-top: 10px;
-}
-
-@keyframes blink {
-  0%,100% {opacity: 1;}
-  50% {opacity: 0.4;}
-}
-
-.congrats-container {
-  font-weight: 700;
-  font-size: 22px;
-  color: #d1ddf7;
-  text-shadow: 0 0 20px #61a1ff;
-  animation: fadeInScale 1.2s ease forwards;
-}
-
-.congrats-sub {
-  margin-top: 20px;
-  font-weight: 800;
-  font-size: 28px;
-  color: #fff;
-  text-shadow: 0 0 20px #aff1ff;
-  opacity: 0;
-  animation: fadeInText 1.6s ease forwards;
-  animation-delay: 1.2s;
-}
-
-@keyframes fadeInScale {
-  0% {opacity: 0; transform: scale(0.85);}
-  100% {opacity: 1; transform: scale(1);}
-}
-
-@keyframes fadeInText {
-  to {opacity: 1;}
-}
-
-.page3-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.welcome-illustration {
-  width: 160px;
-  height: 160px;
+.logo-medium {
+  width: 130px;
+  height: auto;
   margin-bottom: 30px;
-  animation: floatUpDown 3s ease-in-out infinite;
 }
 
-@keyframes floatUpDown {
-  0%, 100% {transform: translateY(0);}
-  50% {transform: translateY(-15px);}
+/* Page-specific styles */
+#page1 .logo-large {
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
 }
 
-.click-area {
-  cursor: pointer;
-  flex-shrink: 0;
-  margin-top: auto;
-  font-size: 16px;
-  color: #c9dfff;
-  padding-bottom: 20px;
+#page2 h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 0.12em;
+  color: #f0f4f8;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+#page2 .photo-angkatan {
+  width: 260px;
+  height: 260px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  margin-bottom: 30px;
+  border: 3px solid #bbdefb;
+}
+
+#page2 .continue-text {
+  font-size: 1.2rem;
+  color: #bbdefb;
   font-weight: 600;
-  text-align: center;
-  text-shadow: 0 0 6px #76a7ff;
+  cursor: pointer;
   user-select: none;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+#page2 .continue-text:hover {
+  color: #e3f2fd;
+  text-shadow: 0 0 8px #bbdefb;
+}
+
+#page3 .input-name {
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: none;
+  width: 70%;
+  max-width: 320px;
+  box-shadow: inset 0 0 8px rgb(255 255 255 / 0.4);
+  margin-bottom: 25px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  font-weight: 500;
+}
+
+#page3 .input-name:focus {
+  box-shadow: 0 0 10px 4px #90caf9;
+}
+
+#page3 button {
+  font-size: 1.2rem;
+  background-color: #1565c0;
+  color: #e3f2fd;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 8px #bbdefb;
+  transition: background-color 0.3s ease;
+}
+
+#page3 button:hover:not(:disabled) {
+  background-color: #42a5f5;
+}
+
+#page3 button:disabled {
+  background-color: #548ac5;
+  cursor: default;
+  box-shadow: none;
+}
+
+#page4 {
+  color: #fffde7;
+  background: linear-gradient(135deg, #0d47a1 0%, #2962ff 40%, #82b1ff 100%);
+  flex-direction: column;
+}
+
+#page4 .confetti-container {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 10;
+}
+
+#page4 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 800;
+  text-shadow: 0 0 10px #e8f5e9;
+}
+
+#page4 h3 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+  text-shadow: 0 0 8px #c8e6c9;
+}
+
+#page4 .congrats-message {
+  font-size: 1.3rem;
+  font-weight: 500;
+  max-width: 380px;
+  line-height: 1.4;
+  text-shadow: 0 0 8px #aed581;
+}
+
+#page3 .logo-small,
+#page2 .logo-small {
+  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.4));
+}
+
+@keyframes confetti-fall {
+  0% {transform: translateY(0) rotate(0deg);}
+  100% {transform: translateY(150vh) rotate(360deg);}
 }
