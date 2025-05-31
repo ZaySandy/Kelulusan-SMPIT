@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Graduation Announcement SMPIT Al Khair</title>
+  <title>Pengumuman Kelulusan SMPIT Al Khair Barabai</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="story-container" role="main" aria-live="polite" aria-atomic="true">
-    <!-- Page 1 -->
-    <section class="page active" id="page1" aria-label="SMPIT Al Khair Logo">
-      <img src="https://i.ibb.co/NKc7T2b/smpit-logo.png" alt="SMPIT Al Khair Logo" class="logo-large" />
+  <div class="container">
+    <!-- Page 1: Large Logo -->
+    <section id="page1" class="slide active" aria-label="Logo SMPIT Al Khair">
+      <img src="https://i.ibb.co/0q9d2zP/logo-smpit-al-khair.png" alt="Logo SMPIT Al Khair Barabai" class="logo-large" />
     </section>
 
     <!-- Page 2 -->
-    <section class="page" id="page2" aria-label="Graduation announcement main message">
-      <img src="https://i.ibb.co/NKc7T2b/smpit-logo.png" alt="SMPIT Al Khair small logo" class="logo-small" />
-      <h1>ANNOUNCEMENT OF GRADUATION OF SMPIT AL KHAIR CLASS 2024/2025</h1>
-      <img src="https://i.ibb.co/msy5JXw/class-photo.jpg" alt="Class photo of SMPIT Al Khair graduates" class="class-photo" />
-      <div class="click-area" id="continueBtn" tabindex="0" role="button" aria-pressed="false" aria-label="Continue to congratulations page">Click continue</div>
+    <section id="page2" class="slide" aria-label="Pengumuman Kelulusan">
+      <img src="https://i.ibb.co/0q9d2zP/logo-smpit-al-khair.png" alt="Logo kecil" class="logo-small" />
+      <h1>PENGUMUMAN KELULUSAN<br/>SMPIT AL KHAIR<br/>ANGKATAN 2024/2025</h1>
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=80" alt="Foto Angkatan" class="photo-angkatan" />
+      <div class="continue-text" role="button" tabindex="0" aria-label="Lanjutkan pengumuman" id="continueBtn">klik continue</div>
     </section>
 
     <!-- Page 3 -->
-    <section class="page" id="page3" aria-label="Graduation congratulations message">
-      <div class="page3-content">
-        <img src="https://i.ibb.co/2SYNJCM/celebration.png" alt="Celebration illustration" class="welcome-illustration" />
-        <div class="congrats-container" id="congratsMain">Congratulations Nanda has been declared GRADUATED</div>
-        <div class="congrats-sub" id="congratsSub">Congratulations to Nanda</div>
-      </div>
+    <section id="page3" class="slide" aria-label="Input Nama Siswa">
+      <img src="https://i.ibb.co/0q9d2zP/logo-smpit-al-khair.png" alt="Logo kecil" class="logo-small" />
+      <input type="text" id="studentName" class="input-name" placeholder="Masukkan Nama Siswa" aria-label="Masukkan Nama Siswa" autocomplete="off" />
+      <button id="submitName" disabled>Lanjutkan</button>
+    </section>
+
+    <!-- Page 4 -->
+    <section id="page4" class="slide" aria-label="Pengumuman Kelulusan Personal">
+      <div class="confetti-container" aria-hidden="true"></div>
+      <h2>Selamat <span id="displayName">Nama</span>!</h2>
+      <h3>dinyatakan</h3>
+      <h2>LULUS</h2>
+      <p class="congrats-message">Kami ucapkan selamat kepada Anda atas kelulusan dari SMPIT Al Khair Barabai.<br/>Semoga sukses dan terus berkarya!</p>
     </section>
   </div>
-
-  <script src="main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
