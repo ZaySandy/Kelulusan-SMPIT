@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Graduation Announcement SMPIT Al Khair</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap');
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #004e92, #000428);
+    color: #e0eaff;
+    overflow: hidden;
+  }
+  .story-container {
+    width: 360px;
+    height: 640px;
+    background: linear-gradient(120deg, #003c70, #0059a3);
+    margin: 20px auto;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgb(0 0 0 / 0.4);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .page {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    position: absolute;
+    top: 0; left: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    color: #e6f0ff;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  .page.active {
+    opacity: 1;
+    position: relative;
+  }
+  .logo-large {
+    width: 200px;
+    height: auto;
+    margin: 0 auto 40px auto;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+  }
+  .logo-small {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
+  }
+  h1 {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    text-shadow: 0 0 12px rgba(255,255,255,0.2);
+  }
+  h2 {
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 20px 0;
+    text-shadow: 0 0 8px rgba(0,0,0,0.3);
+  }
+  .class-photo {
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    margin-bottom: 15px;
+    border: 3px solid #46a0ff;
+  }
+  .continue-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #a1d1ff;
+    cursor: pointer;
+    text-shadow: 0 0 6px #88bbff;
+    user-select: none;
+    animation: blink 1.6s infinite;
+    margin-top: 10px;
+  }
+  @keyframes blink {
+    0%,100% {opacity: 1;}
+    50% {opacity: 0.4;}
+  }
+  .congrats-container {
+    font-weight: 700;
+    font-size: 22px;
+    color: #d1ddf7;
+    text-shadow: 0 0 20px #61a1ff;
+    animation: fadeInScale 1.2s ease forwards;
+  }
+  .congrats-sub {
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 0 0 20px #aff1ff;
+    opacity: 0;
+    animation: fadeInText 1.6s ease forwards;
+    animation-delay: 1.2s;
+  }
+  @keyframes fadeInScale {
+    0% {opacity: 0; transform: scale(0.85);}
+    100% {opacity: 1; transform: scale(1);}
+  }
+  @keyframes fadeInText {
+    to {opacity: 1;}
+  }
+  .page3-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcome-illustration {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 30px;
+    animation: floatUpDown 3s ease-in-out infinite;
+  }
+  @keyframes floatUpDown {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(-15px);}
+  }
+  /* Button area transparent only on page 2 for continue click */
+  .click-area {
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: auto;
+    font-size: 16px;
+    color: #c9dfff;
+    padding-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0 0 6px #76a7ff;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+  <div class="story-container" role="main" aria-live="polite" aria-atomic="true">
+    <!-- Page 1 -->
+    <section class="page active" id="page1" aria-label="SMPIT Al Khair Logo">
+      <img src="https://i.ibb.co/NKc7T2b/smpit-logo.png" alt="SMPIT Al Khair Logo" class="logo-large" />
+    </section>
+    <!-- Page 2 -->
+    <section class="page" id="page2" aria-label="Graduation announcement main message">
+      <img src="https://i.ibb.co/NKc7T2b/smpit-logo.png" alt="SMPIT Al Khair small logo" class="logo-small" />
+      <h1>ANNOUNCEMENT OF GRADUATION OF SMPIT AL KHAIR CLASS 2024/2025</h1>
+      <img src="https://i.ibb.co/msy5JXw/class-photo.jpg" alt="Class photo of SMPIT Al Khair graduates" class="class-photo" />
+      <div class="click-area" id="continueBtn" tabindex="0" role="button" aria-pressed="false" aria-label="Continue to congratulations page">Click continue</div>
+    </section>
+    <!-- Page 3 -->
+    <section class="page" id="page3" aria-label="Graduation congratulations message">
+      <div class="page3-content">
+        <img src="https://i.ibb.co/2SYNJCM/celebration.png" alt="Celebration illustration" class="welcome-illustration" />
+        <div class="congrats-container" id="congratsMain">Congratulations Nanda has been declared GRADUATED</div>
+        <div class="congrats-sub" id="congratsSub">Congratulations to Nanda</div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function(){
+      const pages = [
+        document.getElementById('page1'),
+        document.getElementById('page2'),
+        document.getElementById('page3')
+      ];
+      let current = 0;
+
+      // Utility to show a page by index
+      function showPage(index){
+        pages.forEach((p,i) => {
+          p.classList.toggle('active', i === index);
+        });
+      }
+
+      // Progress to next page
+      function nextPage(){
+        if(current < pages.length - 1){
+          current++;
+          showPage(current);
+          // After reaching last page, focus for accessibility
+          if(current === pages.length - 1){
+            document.getElementById('congratsMain').focus?.();
+          }
+        }
+      }
+
+      // Add click event on continue button
+      const continueBtn = document.getElementById('continueBtn');
+      continueBtn.addEventListener('click', () => {
+        nextPage();
+      });
+      continueBtn.addEventListener('keypress', e => {
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          nextPage();
+        }
+      });
+
+      // Also allow clicking anywhere on page 1 to go next for user convenience
+      pages[0].addEventListener('click', () => nextPage());
+
+      // Keyboard controls: Right arrow or Space to go next page
+      document.addEventListener('keydown', e => {
+        if(e.key === 'ArrowRight' || e.key === ' '){
+          if(current < pages.length - 1){
+            e.preventDefault();
+            nextPage();
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
+
