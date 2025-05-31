@@ -8,7 +8,9 @@ body, html {
   font-family: 'Poppins', sans-serif;
   background-color: #0d47a1;
   color: #e3f2fd;
-  overflow: hidden;
+  /*overflow: hidden; */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .container {
@@ -35,6 +37,7 @@ body, html {
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   animation: fadeIn 0.8s ease forwards;
+  overflow-y: auto;
 }
 
 .slide.active {
@@ -192,6 +195,10 @@ body, html {
 
 
 @media only screen and (max-width: 600px) {
+  .logo-small {
+    margin-bottom: 10px;
+  }
+  
   #page2 h1 {
     font-size: 1.5rem;
     margin-bottom: 15px;
