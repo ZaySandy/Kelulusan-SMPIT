@@ -3,6 +3,10 @@ const inputName = document.getElementById('studentName');
 const submitBtn = document.getElementById('submitName');
 const displayName = document.getElementById('displayName');
 
+setTimeout(() => {
+  showSlide(1); 
+}, 2000);
+
 function showSlide(index) {
   slides.forEach((s, i) => {
     s.classList.toggle('active', i === index);
