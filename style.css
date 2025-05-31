@@ -194,5 +194,24 @@ body, html {
 @media only screen and (max-width: 600px) {
   #page2 h1 {
     font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  #page2 .photo-angkatan {
+    margin-bottom: 15px;
+  }
+
+  #page4 h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  #page4 h3 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+  }
+
+  #page4 .congrats-message {
+    font-size: 1rem;
   }
 }
